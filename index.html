@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Professional Resume Builder</h1>
+        <p>Create and customize your professional resume with powerful tools</p>
+    </header>
+
+    <main class="container">
+        <form id="resume-form">
+
+            <section class="form-section">
+                <h2>Personal Information</h2>
+                <div class="input-group personal-info-grid">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <input type="text" id="linkedin" placeholder="LinkedIn Profile URL">
+                    <input type="text" id="github" placeholder="GitHub Profile URL">
+                    <div>
+                        <label for="photo">Profile Photo:</label>
+                        <input type="file" id="photo" accept="image/*">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Professional Summary</h2>
+                <div class="input-group">
+                    <textarea id="summary" placeholder="Write a brief professional summary or objective..."></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Education</h2>
+                <div id="education-list">
+                    </div>
+                <button type="button" class="add-btn" id="add-education-btn">Add Education</button>
+            </section>
+
+            <section class="form-section">
+                <h2>Work Experience</h2>
+                <div id="experience-list">
+                    </div>
+                <button type="button" class="add-btn" id="add-experience-btn">Add Experience</button>
+            </section>
+
+            <section class="form-section">
+                <h2>Projects</h2>
+                <div id="projects-list">
+                    </div>
+                <button type="button" class="add-btn" id="add-project-btn">Add Project</button>
+            </section>
+            
+            <section class="form-section">
+                <h2>Skills</h2>
+                <div class="input-group">
+                    <input type="text" id="skill-input" placeholder="Enter a skill and press Enter">
+                    <div id="skills-container"></div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Certifications</h2>
+                <div id="certifications-list">
+                    </div>
+                <button type="button" class="add-btn" id="add-certification-btn">Add Certification</button>
+            </section>
+
+            <div class="form-actions">
+                <button type="button" id="previewBtn">Preview Resume</button>
+                <button type="button" id="saveBtn">Save Progress</button>
+                <button type="button" id="loadBtn">Load Progress</button>
+                <button type="button" id="resetBtn" class="reset">Reset Form</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Enhanced Resume Builder. All rights reserved.</p>
+    </footer>
+
+    <template id="education-template">
+        <div class="dynamic-item">
+            <input type="text" class="degree" placeholder="Degree" required>
+            <input type="text" class="institution" placeholder="Institution Name" required>
+            <input type="text" class="gradYear" placeholder="Year of Graduation" required>
+            <input type="text" class="cgpa" placeholder="CGPA / Percentage">
+            <button type="button" class="remove-btn">Remove</button>
+        </div>
+    </template>
+
+    <template id="experience-template">
+        <div class="dynamic-item">
+            <input type="text" class="jobTitle" placeholder="Job Title" required>
+            <input type="text" class="company" placeholder="Company Name" required>
+            <input type="text" class="duration" placeholder="Duration (e.g. Jan 2023 - Present)" required>
+            <textarea class="jobDesc" placeholder="Job Description"></textarea>
+            <button type="button" class="remove-btn">Remove</button>
+        </div>
+    </template>
+
+    <template id="project-template">
+        <div class="dynamic-item">
+            <input type="text" class="projTitle" placeholder="Project Title" required>
+            <textarea class="projDesc" placeholder="Project Description"></textarea>
+            <input type="text" class="techStack" placeholder="Tech Stack Used">
+            <input type="url" class="projLink" placeholder="Project Link">
+            <button type="button" class="remove-btn">Remove</button>
+        </div>
+    </template>
+
+    <template id="certification-template">
+        <div class="dynamic-item">
+            <input type="text" class="certTitle" placeholder="Certificate Title" required>
+            <input type="text" class="certIssuer" placeholder="Issued By">
+            <input type="text" class="certYear" placeholder="Year">
+            <button type="button" class="remove-btn">Remove</button>
+        </div>
+    </template>
+</body>
+</html>
